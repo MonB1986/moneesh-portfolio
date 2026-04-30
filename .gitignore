@@ -1,0 +1,15 @@
+# OS-specific files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# VS Code settings
+.vscode/
+
+# Backup and temporary files
+*.bak
+*.tmp
+*~
+
+# Logs
+*.log

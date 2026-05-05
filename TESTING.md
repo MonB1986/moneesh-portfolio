@@ -37,6 +37,50 @@ Manual review of each wireframe against each user story, checking that the propo
 
 ---
 
+### Stage 4: HTML Skeleton
+
+**Date:** [05/05/2026]
+
+**What was tested:**
+The complete HTML structure (header, hero, about, skills, projects, contact, footer) before any styling or framework integration.
+
+**How it was tested:**
+- Manually walked through the file in VS Code, checking each section uses semantic HTML5 tags appropriate to its content
+- Verified heading hierarchy: one `<h1>` (page title in hero), `<h2>` for each section, `<h3>` for sub-headings (Quick Facts, project titles)
+- Cross-checked every nav link `href` matches a corresponding `id` on a section
+- Cross-checked every form `<label for="...">` matches an input `id`
+- Confirmed every external link uses `target="_blank" rel="noopener noreferrer"` (criterion 2.5)
+- Confirmed every `<img>` has descriptive `alt` text (criterion 1.2)
+- Confirmed appropriate inputs have `required` attribute for defensive design
+
+**Results:**
+
+| Check | Result |
+| --- | --- |
+| Semantic tags used (header, main, section, article, nav, footer) | ✅ |
+| Single `<h1>` on the page | ✅ |
+| All nav links point to valid section IDs | ✅ |
+| All form labels paired with input IDs | ✅ |
+| All external links use `target="_blank" rel="noopener noreferrer"` | ✅ |
+| All images have descriptive alt text | ✅ |
+| Required inputs marked with `required` (Name, Email, Message) | ✅ |
+| Optional inputs (Company, Role) not required | ✅ |
+| Section comments present above each `<section>` | ✅ |
+
+**Issues found and fixed during this stage:**
+- Initial nav link `href` values were missing the `#` prefix, which would have caused broken navigation — corrected before commit.
+- The `<textarea>` initially had an invalid `type` attribute — removed since `type` only applies to `<input>`.
+- Some `rel` attributes had a `noreferer` typo (one r) instead of `noreferrer` — fixed via find-and-replace.
+- Project cards initially all had identical tech tags — varied per project to better reflect skill breadth.
+- Three project titles were left as "Project Title" placeholder — updated to actual project names.
+
+**Notes:**
+- Site does not yet have CSS or Bootstrap. Visual layout will be added in Stage 5.
+- Profile image and project images reference filenames that don't yet exist (`profile.jpg`, `project1.jpg`, etc.). These will be added before deployment.
+
+---
+
+
 ## Validator Tests
 
 To be completed in later stages:

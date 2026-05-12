@@ -32,3 +32,21 @@ h6 {
   font-family: var(--font-heading);
   color: var(--text);
 }
+
+
+/* Navbar */
+
+.navbar-brand {
+    font-family: var(--font-heading);
+    color: var(--text);
+}
+
+.nav-link{
+    font-family: var(--font-body);
+    color: var(--text);
+    transition: color 0.2s ease-in-out;
+}
+
+.nav-link:hover {
+    color: var(--coral);
+}

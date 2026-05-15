@@ -99,3 +99,24 @@ h6 {
   color: var(--coral-dark);
   transform: scale(1.1);
 }
+
+
+/* Projects Section */
+
+#projects .card {
+  background-color: white;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  border: none;
+}
+
+#projects .card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0.12);
+}
+
+#projects.card-title {
+    color: var(--text);
+    margin-top: 5px;
+    margin-bottom: 5px;
+}

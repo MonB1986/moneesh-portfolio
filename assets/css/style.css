@@ -173,3 +173,14 @@ h6 {
   transform: translateY(-4px) scale(1.05);
 }
 
+
+/* Footer Section */
+
+footer {
+    background-color: var(--bg); 
+    border-top: 1px solid var(--blue); 
+}
+
+footer p {
+  color: var(--text);
+}

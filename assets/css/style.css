@@ -92,6 +92,39 @@ h6 {
   } 
   
 
+  /* About section */
+
+#about .quick-facts {
+  border-left: 1px solid var(--blue);
+  padding-left: 3rem;
+}
+
+#about p {
+  max-width: 540px;
+  line-height: 1.9;
+}
+
+#about ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+#about li {
+  position: relative;
+  padding-left: 1.5rem;
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+#about li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: var(--coral-dark);
+  font-weight: bold;
+}
+
+
 
 /* Skills Section */
 
@@ -195,6 +228,14 @@ footer p {
 
 
 
+/* Media Query */
 
+/* Remove border in about section for screens below 768px */
 
-  
+@media (max-width: 767.98px) {
+  #about .quick-facts {
+    border-left: none;
+    padding-left: 0;
+    margin-top: 2rem;
+  }
+}

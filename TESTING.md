@@ -1,6 +1,6 @@
 # Testing Documentation — Moneesh's Portfolio
 
-This document records testing performed throughout the development of the portfolio site, in line with criteria 5.1, 5.2, M.vi, and M.vii of the assessment grid. Entries are added at each development stage rather than retrospectively.
+This document records testing performed throughout the development of the portfolio site. Entries are added at each development stage rather than retrospectively.
 
 ---
 
@@ -8,7 +8,7 @@ This document records testing performed throughout the development of the portfo
 
 ### Stage 2: Wireframes (design phase)
 
-**Date:** [30/04/2026]
+**Date:** 30/04/2026
 
 **What was tested:**
 Wireframes for mobile (375px), tablet (768px), and desktop (1280px) breakpoints, validated against the five user stories defined at project start.
@@ -39,7 +39,7 @@ Manual review of each wireframe against each user story, checking that the propo
 
 ### Stage 4: HTML Skeleton
 
-**Date:** [05/05/2026]
+**Date:** 05/05/2026
 
 **What was tested:**
 The complete HTML structure (header, hero, about, skills, projects, contact, footer) before any styling or framework integration.
@@ -49,8 +49,8 @@ The complete HTML structure (header, hero, about, skills, projects, contact, foo
 - Verified heading hierarchy: one `<h1>` (page title in hero), `<h2>` for each section, `<h3>` for sub-headings (Quick Facts, project titles)
 - Cross-checked every nav link `href` matches a corresponding `id` on a section
 - Cross-checked every form `<label for="...">` matches an input `id`
-- Confirmed every external link uses `target="_blank" rel="noopener noreferrer"` (criterion 2.5)
-- Confirmed every `<img>` has descriptive `alt` text (criterion 1.2)
+- Confirmed every external link uses `target="_blank" rel="noopener noreferrer"` 
+- Confirmed every `<img>` has descriptive `alt` text 
 - Confirmed appropriate inputs have `required` attribute for defensive design
 
 **Results:**
@@ -80,20 +80,65 @@ The complete HTML structure (header, hero, about, skills, projects, contact, foo
 
 ---
 
+### Stage 5: Bootstrap Integration + Custom CSS Styling
+
+**Date:** 06/05/2026 – 16/05/2026
+
+**What was tested:** 
+The visual application of Bootstrap 5 utility classes across all sections (Stage 5a–5b), followed by the layering of custom CSS for palette, typography, and interactive states.
+
+Testing focused on grid behaviour, palette consistency, hover and focus states, and overall visual cohesion across the page.
+
+**How it was tested:** 
+- Live Server in Chrome with DevTools open throughout. 
+- Each Bootstrap class was added incrementally and the result inspected visually before moving on. 
+- Custom CSS was applied section by section, with manual hover and focus interaction on every interactive element. 
+- The browser console was monitored for errors after each significant change. 
+- Whole-site screenshots were captured at four breakpoints (375px, 768px, ~1024px, 1440px+) 
+
+**Results:**
+
+| Check | Result |
+| --- | --- |
+| External dependencies load without console errors (Bootstrap, Font Awesome, Google Fonts) | ✅ |
+| Bootstrap grid renders correctly across all sections | ✅ |
+| Coastal Warmth palette applied via CSS variables (no hardcoded hex in component styles) | ✅ |
+| Poppins applied to headings, Inter applied to body text | ✅ |
+| Navbar hover state working (link colour shift) | ✅ |
+| Primary button override (coral background with darker coral hover) working on all .btn-primary instances | ✅ |
+| Skills section icons scale on hover | ✅ |
+| Project cards lift on hover (transform + shadow) | ✅ |
+| Contact form inputs show dusty blue focus glow | ✅ |
+| Social icons in footer lift on hover | ✅ |
+| Whole-site screenshots captured at four breakpoints | ✅ |
+
+**Issues found and fixed during this stage:**
+
+- Bootstrap's default .btn-primary blue clashed with the Coastal Warmth palette - overridden with custom coral via CSS variables.
+- Some palette colours were initially written as hex values inside component selectors - rewritten to reference CSS variables for consistency and maintainability.
+- Project card hover lift was initially too aggressive - softened by reducing the transform distance and adjusting the transition timing.
+
+
+**Notes:**
+
+- Stage 5 represents the transition from a Bootstrap-default-looking page to a visually cohesive portfolio that reflects the Coastal Warmth palette and Poppins/Inter typography decisions made at planning stage.
+- Responsive behaviour was observed informally during this stage but not formally tested.
+
+---
 
 ## Validator Tests
 
 To be completed in later stages:
-- [ ] HTML — official W3C validator (criterion 2.2)
-- [ ] CSS — official Jigsaw validator (criterion 2.3)
+- [ ] HTML — official W3C validator 
+- [ ] CSS — official Jigsaw validator 
 
 ## Browser Tests
 
 To be completed once site is live:
-- [ ] Chrome — desktop / tablet / mobile
-- [ ] Firefox — desktop
-- [ ] Safari — desktop / mobile
-- [ ] Edge — desktop
+- [ ] Chrome - desktop / tablet / mobile
+- [ ] Firefox - desktop
+- [ ] Safari - desktop / mobile
+- [ ] Edge - desktop
 
 ## Lighthouse Audit
 

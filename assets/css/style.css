@@ -85,6 +85,14 @@ h6 {
   color: white;
 }
 
+/*Hero Section */
+
+ .hero-photo {
+    max-width: 350px;
+  } 
+  
+
+
 /* Skills Section */
 
 #skills i {
@@ -184,3 +192,9 @@ footer {
 footer p {
   color: var(--text);
 }
+
+
+
+
+
+  

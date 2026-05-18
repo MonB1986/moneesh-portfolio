@@ -87,12 +87,11 @@ h6 {
 
 /*Hero Section */
 
- .hero-photo {
-    max-width: 350px;
-  } 
-  
+.hero-photo {
+  max-width: 350px;
+}
 
-  /* About section */
+/* About section */
 
 #about .quick-facts {
   border-left: 1px solid var(--blue);
@@ -123,8 +122,6 @@ h6 {
   color: var(--coral-dark);
   font-weight: bold;
 }
-
-
 
 /* Skills Section */
 
@@ -158,10 +155,15 @@ h6 {
   box-shadow: 0 8px 20px rgba(0, 0, 0.12);
 }
 
-#projects.card-title {
+#projects .card-title {
   color: var(--text);
   margin-top: 5px;
   margin-bottom: 5px;
+}
+
+#projects .row {
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 /* Contact Section */
@@ -214,19 +216,16 @@ h6 {
   transform: translateY(-4px) scale(1.05);
 }
 
-
 /* Footer Section */
 
 footer {
-    background-color: var(--bg); 
-    border-top: 1px solid var(--blue); 
+  background-color: var(--bg);
+  border-top: 1px solid var(--blue);
 }
 
 footer p {
   color: var(--text);
 }
-
-
 
 /* Media Query */
 
@@ -239,3 +238,4 @@ footer p {
     margin-top: 2rem;
   }
 }
+

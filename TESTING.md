@@ -126,6 +126,46 @@ Testing focused on grid behaviour, palette consistency, hover and focus states, 
 
 ---
 
+### Stage 6: Responsive Design Testing
+
+**Date:** 18/05/2026
+
+**What was tested:** Full-site responsive behaviour across four breakpoints (375px mobile, 768px tablet, ~1024px standard desktop, 1440px+ XL desktop). Each section reviewed individually at every breakpoint.
+
+**How it was tested:**
+
+-Chrome DevTools device toolbar at 100% zoom, viewport set manually to each target width
+-Manual visual inspection against design intent and Stage 2 wireframes
+-Whole-site screenshots captured at each breakpoint before fixes as a baseline
+-DevTools Elements panel used to debug specific layout issues
+-Each fix re-tested at all four breakpoints to confirm no regression
+
+**Results:**
+| Section  | Mobile (375px) | Tablet (768px) | Desktop (1024px) | XL (1440px) |
+|----------|:--------------:|:--------------:|:----------------:|:-----------:|
+| Hero     | ✅             | ✅             | ✅               | ✅          |
+| About    | ✅             | ✅             | ✅               | ✅          |
+| Skills   | ✅             | ✅             | ✅               | ✅          |
+| Projects | ✅             | ✅             | ✅               | ✅          |
+| Contact  | ✅             | ✅             | ✅               | ✅          |
+| Footer   | ✅             | ✅             | ✅               | ✅          |
+
+**Issues found and fixed during this stage:**
+
+- Hero column order on mobile — photo was appearing above the name in DOM order, breaking the recruiter's reading hierarchy. HTML reordered so text comes first; order-md-1/order-md-2 restore the desktop layout.
+- Hero photo too dominant on XL desktop — headshot was filling its column. Added hero-photo class with max-width: 350px. Initial version used an unnecessary media query wrapper; refactored to a single base rule after testing confirmed the wrapper was redundant.
+- Hero vertical balance — resolved as a side-effect of the photo size constraint. With a smaller photo, align-items-center correctly aligned the text column without floaty empty space.
+-About section column alignment — bio and Quick Facts felt stranded. Added quick-facts class with left border, padding, and align-items-start on the row. Bio constrained to max-width: 540px with line-height: 1.9. Default bullets replaced with custom coral ::before bullets.
+- About section responsive stacking — orphan border at top of Quick Facts when stacked. Added media query to remove border and add top margin below tablet. Initial max-width: 768px collided with Bootstrap's col-md-6 activating at exactly 768px; refined to 767.98px to match Bootstrap's own convention.
+- Skills row spacing — reviewed at all four breakpoints. Gap creates appropriate visual rhythm and reads as a unified 2x3 grid. No change made.
+- Projects row width on XL — four cards stretching across full container felt sprawling. Capped row at max-width: 1200px with margin: 0 auto. Also changed columns from col-lg-3 to col-xl-3 so four-across only activates at 1200px+, keeping 2-across at standard desktop. Tested col-xl-4 (orphan card) and col-xl-6 (oversized images) before settling on col-12 col-md-6 col-xl-3.
+
+**Notes:**
+
+- Stage 6 reinforced that media queries should change behaviour at a breakpoint, not just scope a rule. Two attempts during this stage produced redundant or unnecessarily restrictive media queries; both were simplified after testing.
+- The 768px boundary collision demonstrated why Bootstrap uses 767.98px for its own upper bounds — pattern adopted consistently where similar collisions could occur.
+
+
 ## Validator Tests
 
 To be completed in later stages:

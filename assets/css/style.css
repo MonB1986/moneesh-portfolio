@@ -50,38 +50,36 @@ h6 {
 }
 
 .nav-link:hover {
-  color: var(--coral);
+  text-decoration: underline;
 }
 
 /* Buttons */
 
 .btn-primary {
-  background-color: var(--coral);
-  border-color: var(--coral);
-  transition:
-    background-color 0.2s ease-in-out,
-    border-color 0.2s ease-in-out;
-  color: white;
+  background-color: var(--coral-dark);
+  border-color: var(--coral-dark);
+  transition: transform 0.2s, box-shadow 0.2s;
 }
 
 .btn-primary:hover {
-  background-color: var(--coral-dark);
+  background-color: var(--coral-dark);  /* stays the same */
   border-color: var(--coral-dark);
-  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
 
 .btn-outline-primary {
   background-color: transparent;
-  border-color: var(--coral);
+  border-color: var(--coral-dark);
   transition:
     background-color 0.2s ease-in-out,
     border-color 0.2s ease-in-out;
-  color: var(--coral);
+  color: var(--coral-dark);
 }
 
 .btn-outline-primary:hover {
-  border-color: var(--coral);
-  background-color: var(--coral);
+  border-color: var(--coral-dark);
+  background-color: var(--coral-dark);
   color: white;
 }
 
@@ -119,7 +117,7 @@ h6 {
   content: "•";
   position: absolute;
   left: 0;
-  color: var(--coral-dark);
+  color: var(--coral);
   font-weight: bold;
 }
 
@@ -197,13 +195,13 @@ h6 {
 }
 
 #contact a {
-  color: var(--coral);
-  text-decoration: none;
+  color: var(--slate);
+  text-decoration: underline;
   transition: color 0.2s ease-in-out;
 }
 
 #contact a:hover {
-  color: var(--coral-dark);
+   text-decoration: none;
 }
 
 #contact ul li a i {
@@ -226,6 +224,8 @@ footer {
 footer p {
   color: var(--text);
 }
+
+
 
 /* Media Query */
 

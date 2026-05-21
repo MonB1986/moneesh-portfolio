@@ -165,6 +165,58 @@ Testing focused on grid behaviour, palette consistency, hover and focus states, 
 - Stage 6 reinforced that media queries should change behaviour at a breakpoint, not just scope a rule. Two attempts during this stage produced redundant or unnecessarily restrictive media queries; both were simplified after testing.
 - The 768px boundary collision demonstrated why Bootstrap uses 767.98px for its own upper bounds — pattern adopted consistently where similar collisions could occur.
 
+---
+
+### Stage 7: Accessibility Audit
+**Date:** 19/05/2026
+
+**What was tested:**
+
+Full accessibility audit covering heading hierarchy, alt text, semantic HTML, colour contrast, keyboard navigation, and form/ARIA attributes. Tested against WCAG 2.1 AA standards.
+
+**How it was tested:**
+
+- Manual review of all heading tags in source order to confirm valid hierarchy
+- Manual review of every img element for descriptive alt text
+- Source review of semantic HTML5 element usage (`<header>`, `<nav>`, `<main>`, `<section>`, `<article>`, `<footer>`)
+- WebAIM Contrast Checker used to test every text-on-background colour pair against WCAG AA
+- Keyboard navigation tested by tabbing through all interactive elements in Chrome, confirming logical focus order and visible focus indicators
+- Form labels tested by clicking each label and confirming focus moved to the associated input
+- ARIA attributes reviewed on icon-only links and the navbar toggle
+
+| Check | Result |
+| --- | --- |
+| Single `<h1>` on the page | ✅ |
+| Heading hierarchy logical, no skipped levels | ✅ |
+| All `<img>` elements have descriptive alt text | ✅ |
+| Semantic HTML5 elements used appropriately | ✅ |
+| Body text contrast (slate on cream) — WCAG AA Normal | ✅ |
+| Button text contrast (white on coral-dark) — WCAG AA Normal | ✅ |
+| Email link contrast (slate on cream) — WCAG AA Normal | ✅ |
+| Tab order follows DOM order and matches visual hierarchy | ✅ |
+| Every focusable element has a visible focus indicator | ✅ |
+| All form `<label>` elements correctly associated with inputs | ✅ |
+| Navbar toggle has appropriate ARIA attributes | ✅ |
+| Icon-only links have `aria-label` for screen readers | ✅ |
+| Decorative icons marked `aria-hidden="true"` | ✅ |
+
+**Issues found and fixed during this stage:**
+
+- Project image alt text was generic and started with "Picture of..." which is redundant for screen readers. Rewrote each as descriptive thumbnails referencing the project (e.g. "Thumbnail for Brew & Bite café landing page project"). Also renamed the fourth project from "Recipe Rolodex" to "Click Wild" so the project matched the wildlife photo used as its thumbnail.
+
+- Button text (white on coral #D97757) failed WCAG AA Normal. Changed button background to coral-dark #B55E40, which passes AA when paired with white text. Hover state changed from a colour shift to a subtle lift effect with shadow, keeping the contrast-passing background.
+
+- Email link (dusty blue on cream) failed WCAG AA. Switched to slate #1F2937 with underline. Hover removes the underline as the function.
+
+- Navbar hover (lighter coral) failed WCAG AA. Switched to slate underline on hover, consistent with the email link pattern.
+
+**Notes:**
+
+- Stage 7 reinforced that contrast assumptions need to be tested, not guessed. Initial fixes were applied based on the assumption that "darker = passes" - testing revealed coral-dark on cream actually still fails AA for normal text, requiring further iteration. The slate-with-underline pattern emerged as the most consistently accessible solution across multiple interactive elements.
+
+- The site already had strong baseline accessibility from Stages 4 and 5: semantic HTML, ARIA attributes on icon-only links, proper form labels, and visible focus states on form inputs were all in place before this stage. Stage 7 primarily addressed the contrast failures and refined alt text quality.
+
+- AAA-level contrast was tested informally but not pursued as a target. WCAG AA is the required compliance level for this project and was met throughout.
 
 ## Validator Tests
 

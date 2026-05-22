@@ -26,7 +26,7 @@
 <body>
 
     <!-- Header -->
-    <header>
+    <header class="sticky-top">
         <nav class="navbar navbar-expand-lg">
             <div class="container">
                 <a class="navbar-brand" href="#hero">Moneesh Balendra</a>
@@ -270,6 +270,24 @@
     <footer class="text-center py-4 mt-4">
         <p class="fs-6 ">&copy; 2026 Moneesh Balendra. Built with HTML, CSS & Bootstrap.</p>
     </footer>
+
+
+
+    <!-- Mobile navbar collapse on link click.
+     Adapted from [Broadwalk Games / module 10 Code Institue Course Material] -->
+
+    <script>
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                const navbarCollapse = document.querySelector('.navbar-collapse');
+                const bsCollapse = bootstrap.Collapse.getInstance(navbarCollapse);
+
+                if (bsCollapse) {
+                    bsCollapse.hide();
+                }
+            });
+        });
+    </script>
 
 </body>
 

@@ -58,11 +58,13 @@ h6 {
 .btn-primary {
   background-color: var(--coral-dark);
   border-color: var(--coral-dark);
-  transition: transform 0.2s, box-shadow 0.2s;
+  transition:
+    transform 0.2s,
+    box-shadow 0.2s;
 }
 
 .btn-primary:hover {
-  background-color: var(--coral-dark);  /* stays the same */
+  background-color: var(--coral-dark); /* stays the same */
   border-color: var(--coral-dark);
   transform: translateY(-2px);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
@@ -201,7 +203,7 @@ h6 {
 }
 
 #contact a:hover {
-   text-decoration: none;
+  text-decoration: none;
 }
 
 #contact ul li a i {
@@ -225,8 +227,6 @@ footer p {
   color: var(--text);
 }
 
-
-
 /* Media Query */
 
 /* Remove border in about section for screens below 768px */
@@ -239,3 +239,33 @@ footer p {
   }
 }
 
+/* Sticky Nav Bar shows above each section so section can be visible */
+
+#hero,
+#about,
+#skills,
+#projects,
+#contact {
+  scroll-margin-top: 80px;
+}
+
+@media (max-width: 991.98px) {
+  #hero,
+  #about,
+  #skills,
+  #projects,
+  #contact {
+    scroll-margin-top: 230px;
+  }
+}
+
+/*Header sticky Nav Shadow decoration */
+header.sticky-top {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+header.sticky-top {
+  background-color: var(
+    --bg
+  ); /* Gives sticky nav a background so it doesnt apprear transparent */
+}

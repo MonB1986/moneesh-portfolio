@@ -1,4 +1,4 @@
-# Testing Documentation — Moneesh's Portfolio
+# Testing Documentation - Moneesh's Portfolio
 
 This document records testing performed throughout the development of the portfolio site. Entries are added at each development stage rather than retrospectively.
 
@@ -68,10 +68,10 @@ The complete HTML structure (header, hero, about, skills, projects, contact, foo
 | Section comments present above each `<section>` | ✅ |
 
 **Issues found and fixed during this stage:**
-- Initial nav link `href` values were missing the `#` prefix, which would have caused broken navigation — corrected before commit.
-- The `<textarea>` initially had an invalid `type` attribute — removed since `type` only applies to `<input>`.
-- Some `rel` attributes had a `noreferer` typo (one r) instead of `noreferrer` — fixed via find-and-replace.
-- Project cards initially all had identical tech tags — varied per project to better reflect skill breadth.
+- Initial nav link `href` values were missing the `#` prefix, which would have caused broken navigation - corrected before commit.
+- The `<textarea>` initially had an invalid `type` attribute - removed since `type` only applies to `<input>`.
+- Some `rel` attributes had a `noreferer` typo (one r) instead of `noreferrer` - fixed via find-and-replace.
+- Project cards initially all had identical tech tags - varied per project to better reflect skill breadth.
 - Three project titles were left as "Project Title" placeholder — updated to actual project names.
 
 **Notes:**
@@ -152,18 +152,18 @@ Testing focused on grid behaviour, palette consistency, hover and focus states, 
 
 **Issues found and fixed during this stage:**
 
-- Hero column order on mobile — photo was appearing above the name in DOM order, breaking the recruiter's reading hierarchy. HTML reordered so text comes first; order-md-1/order-md-2 restore the desktop layout.
-- Hero photo too dominant on XL desktop — headshot was filling its column. Added hero-photo class with max-width: 350px. Initial version used an unnecessary media query wrapper; refactored to a single base rule after testing confirmed the wrapper was redundant.
-- Hero vertical balance — resolved as a side-effect of the photo size constraint. With a smaller photo, align-items-center correctly aligned the text column without floaty empty space.
--About section column alignment — bio and Quick Facts felt stranded. Added quick-facts class with left border, padding, and align-items-start on the row. Bio constrained to max-width: 540px with line-height: 1.9. Default bullets replaced with custom coral ::before bullets.
-- About section responsive stacking — orphan border at top of Quick Facts when stacked. Added media query to remove border and add top margin below tablet. Initial max-width: 768px collided with Bootstrap's col-md-6 activating at exactly 768px; refined to 767.98px to match Bootstrap's own convention.
-- Skills row spacing — reviewed at all four breakpoints. Gap creates appropriate visual rhythm and reads as a unified 2x3 grid. No change made.
-- Projects row width on XL — four cards stretching across full container felt sprawling. Capped row at max-width: 1200px with margin: 0 auto. Also changed columns from col-lg-3 to col-xl-3 so four-across only activates at 1200px+, keeping 2-across at standard desktop. Tested col-xl-4 (orphan card) and col-xl-6 (oversized images) before settling on col-12 col-md-6 col-xl-3.
+- Hero column order on mobile - photo was appearing above the name in DOM order, breaking the recruiter's reading hierarchy. HTML reordered so text comes first; order-md-1/order-md-2 restore the desktop layout.
+- Hero photo too dominant on XL desktop - headshot was filling its column. Added hero-photo class with max-width: 350px. Initial version used an unnecessary media query wrapper; refactored to a single base rule after testing confirmed the wrapper was redundant.
+- Hero vertical balance - resolved as a side-effect of the photo size constraint. With a smaller photo, align-items-center correctly aligned the text column without floaty empty space.
+-About section column alignment - bio and Quick Facts felt stranded. Added quick-facts class with left border, padding, and align-items-start on the row. Bio constrained to max-width: 540px with line-height: 1.9. Default bullets replaced with custom coral ::before bullets.
+- About section responsive stacking - orphan border at top of Quick Facts when stacked. Added media query to remove border and add top margin below tablet. Initial max-width: 768px collided with Bootstrap's col-md-6 activating at exactly 768px; refined to 767.98px to match Bootstrap's own convention.
+- Skills row spacing - reviewed at all four breakpoints. Gap creates appropriate visual rhythm and reads as a unified 2x3 grid. No change made.
+- Projects row width on XL - four cards stretching across full container felt sprawling. Capped row at max-width: 1200px with margin: 0 auto. Also changed columns from col-lg-3 to col-xl-3 so four-across only activates at 1200px+, keeping 2-across at standard desktop. Tested col-xl-4 (orphan card) and col-xl-6 (oversized images) before settling on col-12 col-md-6 col-xl-3.
 
 **Notes:**
 
 - Stage 6 reinforced that media queries should change behaviour at a breakpoint, not just scope a rule. Two attempts during this stage produced redundant or unnecessarily restrictive media queries; both were simplified after testing.
-- The 768px boundary collision demonstrated why Bootstrap uses 767.98px for its own upper bounds — pattern adopted consistently where similar collisions could occur.
+- The 768px boundary collision demonstrated why Bootstrap uses 767.98px for its own upper bounds - pattern adopted consistently where similar collisions could occur.
 
 ---
 
@@ -190,9 +190,9 @@ Full accessibility audit covering heading hierarchy, alt text, semantic HTML, co
 | Heading hierarchy logical, no skipped levels | ✅ |
 | All `<img>` elements have descriptive alt text | ✅ |
 | Semantic HTML5 elements used appropriately | ✅ |
-| Body text contrast (slate on cream) — WCAG AA Normal | ✅ |
-| Button text contrast (white on coral-dark) — WCAG AA Normal | ✅ |
-| Email link contrast (slate on cream) — WCAG AA Normal | ✅ |
+| Body text contrast (slate on cream) - WCAG AA Normal | ✅ |
+| Button text contrast (white on coral-dark) - WCAG AA Normal | ✅ |
+| Email link contrast (slate on cream) - WCAG AA Normal | ✅ |
 | Tab order follows DOM order and matches visual hierarchy | ✅ |
 | Every focusable element has a visible focus indicator | ✅ |
 | All form `<label>` elements correctly associated with inputs | ✅ |
@@ -248,7 +248,7 @@ What was tested: The complete index.html and assets/css/style.css files validate
 | Check | Result |
 | --- | --- |
 | HTML validation — initial run | 1 error |
-| HTML validation — after fix | ✅ 0 errors, 0 warnings |
+| HTML validation - after fix | ✅ 0 errors, 0 warnings |
 | CSS validation | ✅ 0 errors, 34 informational warnings |
 
 **Issues found and fixed during this stage:**
@@ -261,12 +261,6 @@ The 34 CSS warnings all relate to the same advisory message: "Due to their dynam
 The HTML structural fix uncovered an oversight from earlier in development - the Bootstrap script had been outside <body> since adding Bootstrap to the project first. The validation pass caught what visual testing had not, demonstrating the value of running automated validators alongside manual testing.
 See testing-evidence/html-validation-before.png, testing-evidence/html-validation-after.png, and testing-evidence/css-validation-result.png for screenshots of the validator outputs.
 
-
-## Validator Tests
-
-To be completed in later stages:
-- [ ] HTML — official W3C validator 
-- [ ] CSS — official Jigsaw validator 
 
 ## Browser Tests
 

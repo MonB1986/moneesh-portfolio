@@ -58,7 +58,7 @@
                     <h1>Moneesh Balendra</h1>
                     <p>Junior Frontend Developer</p>
                     <p>I'm someone who loves meaningful conversations, exploring new places, and finding good food.</p>
-                    <a href="#contact" class="btn btn-primary mb-2">Get in touch</a>
+                    <a href="#contact" class="btn btn-primary mb-2 cta-scroll">Get in touch</a>
                 </div>
 
                 <div class="col-12 col-md-6 order-md-2 text-center mt-2">
@@ -294,6 +294,20 @@
             });
         });
     </script>
+
+
+<script>
+document.querySelector('.cta-scroll').addEventListener('click', function(e) {
+    e.preventDefault();
+
+    const contact = document.querySelector('#contact');
+
+    window.scrollTo({
+        top: contact.offsetTop - 80,
+        behavior: 'smooth'
+    });
+});
+</script>
 
 </body>
 

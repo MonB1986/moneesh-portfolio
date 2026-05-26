@@ -2,7 +2,7 @@
 
 A single-page portfolio website built to help recruiters quickly evaluate me as a candidate for Junior Frontend Developer roles.
 
-**Live site:** [URL will go here after deployment]
+**Live site:** https://monb1986.github.io/moneesh-portfolio/
 
 ![Portfolio site screenshot](testing-evidence/portfolio-hero.png)
 
@@ -151,7 +151,7 @@ The site meets WCAG 2.1 AA compliance. All text-on-background colour combination
 This site is deployed using **GitHub Pages**, hosted directly from the repository's `main` branch.
 
 ### To view the live site
-Visit: [URL will be added after deployment]
+Visit: https://monb1986.github.io/moneesh-portfolio/
 
 ### To deploy your own copy
 1. Fork or clone this repository

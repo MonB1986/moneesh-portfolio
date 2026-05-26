@@ -218,6 +218,50 @@ Full accessibility audit covering heading hierarchy, alt text, semantic HTML, co
 
 - AAA-level contrast was tested informally but not pursued as a target. WCAG AA is the required compliance level for this project and was met throughout.
 
+
+**Additional improvements during Stage 7**
+
+During the keyboard navigation testing, a UX issue was identified: when users clicked a nav link on the single-page site, they were taken to the relevant section, but had to manually scroll back to the top to use the navigation again. This was addressed by:
+
+- Adding Bootstrap's sticky-top class to the <header> element so the navigation remains visible as the user scrolls (placed on <header> rather than <nav> so the sticky behaviour applies to the full body scroll context, not just within the header).
+- Adding a solid cream background to the header to prevent content showing through when scrolling.
+- Adding scroll-margin-top to all sections so anchored section headings are not hidden behind the sticky navbar on click.
+- Adding a small JavaScript snippet (adapted from previous course material - Broadwalk Games, Code Institute Module 10) that automatically collapses the mobile hamburger menu when a nav link is clicked, so the menu does not remain open and cover the destination section on mobile.
+
+
+---
+
+
+### Stage 8: HTML and CSS Validation
+**Date:** 21/05/2026
+What was tested: The complete index.html and assets/css/style.css files validated against W3C standards to confirm syntactic correctness and compliance with web standards.
+
+**How it was tested:**
+
+- W3C HTML Validator (https://validator.w3.org/) used via file upload to validate index.html
+- Jigsaw CSS Validator (https://jigsaw.w3.org/css-validator/) used via file upload to validate assets/css/style.css
+- Initial validation run captured as baseline; errors identified, fixed, and revalidated until both files passed cleanly
+- Screenshots captured before and after fixes as evidence (saved in testing-evidence/)
+
+**Results:**
+
+| Check | Result |
+| --- | --- |
+| HTML validation — initial run | 1 error |
+| HTML validation — after fix | ✅ 0 errors, 0 warnings |
+| CSS validation | ✅ 0 errors, 34 informational warnings |
+
+**Issues found and fixed during this stage:**
+
+Stray `<script>` start tag flagged in HTML validator at line 295. Root cause was the Bootstrap JavaScript bundle being placed outside the <body> element, between </body> and </html>, which is invalid HTML. Fixed by moving the Bootstrap script inside the <body>, immediately before the closing tag, and placing it before the custom navbar collapse script so that Bootstrap's JavaScript loads first.
+
+Notes:
+
+The 34 CSS warnings all relate to the same advisory message: "Due to their dynamic nature, CSS variables are currently not statically checked." This is a known limitation of the Jigsaw validator, which does not resolve CSS custom property values during validation. The warnings are tool limitations rather than code issues. The use of CSS variables throughout the stylesheet reflects modern CSS best practice for maintainability and palette consistency, and was a deliberate design decision.
+The HTML structural fix uncovered an oversight from earlier in development - the Bootstrap script had been outside <body> since adding Bootstrap to the project first. The validation pass caught what visual testing had not, demonstrating the value of running automated validators alongside manual testing.
+See testing-evidence/html-validation-before.png, testing-evidence/html-validation-after.png, and testing-evidence/css-validation-result.png for screenshots of the validator outputs.
+
+
 ## Validator Tests
 
 To be completed in later stages:

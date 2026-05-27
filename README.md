@@ -173,6 +173,9 @@ AI tools (Claude, Chat GPT and Co-pilot) were used in this project as a coaching
 
 Specifically:
 - **AI was used for:** explaining concepts (CSS variables, Flexbox order, responsive design patterns, ARIA attributes, WCAG compliance), code review and feedback, debugging help, structural scaffolding for testing documentation, and drafting documentation (this README) for verification and customisation.
+
+A small JavaScript snippet for the hero CTA scroll behaviour was generated with AI assistance after a layout conflict could not be resolved with CSS alone. This was approved by the course director and is attributed in the source.
+
 - **AI was not used for:** writing the HTML or CSS itself, making design decisions, performing tests, or replacing my judgement on what to build.
 
 All code in this repository was written by me. All design decisions and creative choices are my own. All testing was performed by me. The Bootstrap navbar collapse JavaScript snippet was adapted from previous course material (Code Institute, Module 10) and is attributed in the source.

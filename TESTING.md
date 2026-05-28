@@ -261,6 +261,28 @@ The 34 CSS warnings all relate to the same advisory message: "Due to their dynam
 The HTML structural fix uncovered an oversight from earlier in development - the Bootstrap script had been outside <body> since adding Bootstrap to the project first. The validation pass caught what visual testing had not, demonstrating the value of running automated validators alongside manual testing.
 See testing-evidence/html-validation-before.png, testing-evidence/html-validation-after.png, and testing-evidence/css-validation-result.png for screenshots of the validator outputs.
 
+---
+
+**Stage 11:** Final Verification
+
+**Date:** 19/05/2026
+
+**What was tested:** 
+The deployed site was tested on the live URL across mobile, tablet, and desktop breakpoints in Chrome. Every interactive element was clicked. The aim was to confirm that the deployed version matched the locally-tested behaviour and to identify any defects only visible once the site was live.
+
+**How it was tested:**
+Live site loaded at https://monb1986.github.io/moneesh-portfolio/
+Tested in Chrome on desktop and via DevTools device toolbar at four breakpoints
+Every nav link, hero CTA, project link, form input, and social icon clicked or interacted with
+Browser console monitored for errors
+
+**Issues found and fixed during this stage:**
+
+Hero CTA scroll misalignment on mobile. When the "Get in touch" button in the hero was clicked on mobile width, the page scrolled to the Contact section but left part of the Projects section visible at the top of the viewport. Nav link clicks to the same #contact anchor landed correctly, which isolated the issue to the CTA specifically. The root cause was a layout-state difference: the nav links trigger a JavaScript handler that collapses the mobile menu before scrolling, while the CTA did not, so the page was in a different layout state when the scroll calculation ran. The scroll-margin-top CSS rule that normally compensates for the sticky navbar produced the wrong offset in this case. After unsuccessful attempts to resolve the conflict via CSS adjustments, the issue was fixed by adding a small JavaScript snippet to the hero CTA that overrides the default anchor behaviour and manually scrolls to the Contact section with a fixed 80px offset to account for the navbar height. This snippet was generated with AI assistance (approved by the course director) and is attributed in a code comment above the script as well as in the README's AI assistance declaration.
+
+Notes:
+
+The discovery reinforces that deployment testing is a distinct phase from local testing - the defect was reproducible locally in retrospect, but only surfaced naturally during live-site verification. 
 
 ## Browser Tests
 

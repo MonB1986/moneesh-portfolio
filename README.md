@@ -31,11 +31,11 @@ The site was designed around five user stories, each representing a recruiter's 
 
 4. **As a recruiter, I want to get a sense of the candidate as a person**, so I can judge whether they would fit the team. *Solved by the About section with bio paragraph and Quick Facts.*
 
-![About section showing paragraph about the canddiate and a quick-facts section about the candidate](user-story-evidence/us4-about-personal.png)
+![About section showing paragraph about the candidate and a quick-facts section about the candidate](user-story-evidence/us4-about-personal.png)
 
 5. **As a recruiter, I want to be able to contact the candidate easily and find them on LinkedIn or GitHub**, so I can progress to contact them freely without issues. *Solved by the Contact section with a hire-me form, direct email link, and three social links (GitHub, LinkedIn, email).*
 
-![Contact section showing contact form with a get in touch button, email address and three socila media icons below which can be clicked for LinkedIn, GitHub or Email](user-story-evidence/us5-contact-methods.png)
+![Contact section showing contact form with a get in touch button, email address and three social media icons below which can be clicked for LinkedIn, GitHub or Email](user-story-evidence/us5-contact-methods.png)
 
 
 
@@ -174,7 +174,7 @@ Visit: https://monb1986.github.io/moneesh-portfolio/
 5. After a short delay, GitHub will provide a URL where the site is live
 
 ### To run locally
-1. Clone the repository:
+1. Clone the repository: git clone https://github.com/MonB1986/moneesh-portfolio.git
 2. Open the project folder in your editor
 3. Open `index.html` directly in a browser, or use a local server such as VS Code's Live Server extension
 

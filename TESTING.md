@@ -288,19 +288,42 @@ The discovery reinforces that deployment testing is a distinct phase from local 
 
 ## Browser Tests
 
-To be completed once site is live:
-- [ ] Chrome - desktop / tablet / mobile
-- [ ] Firefox - desktop
-- [ ] Safari - desktop / mobile
-- [ ] Edge - desktop
+- [✅] Chrome - desktop / tablet / mobile
+- [✅] Firefox - desktop
+- [✅] Edge - desktop
+
+There were no issues to report whilst testing the deployed site across three browsers. 
 
 ## Lighthouse Audit
 
-To be completed once site is deployed:
-- [ ] Performance
-- [ ] Accessibility
-- [ ] Best Practices
-- [ ] SEO
+**Lighthouse Audit (Mobile):**
+
+| Audit | Score |
+|---|---|
+| Performance | 66 |
+| Accessibility | 100 |
+| Best Practices | 77 |
+| SEO | 100 |
+
+Mobile Performance score is mainly affected by external files being loaded from CDNs, including Bootstrap, Font Awesome, and Google Fonts, as well as the size of placeholder project images. Despite this, the website itself performs efficiently. This means the page loads smoothly and the code is not causing performance issues. The lower score is mostly due to network requests needed to load external frameworks and assets.
+
+The Best Practices score is affected by GitHub Pages’ default cache settings, which cannot be changed by the developer. Placeholder images are currently being used during development, and replacing them with optimised real project screenshots has been identified in the README as a future improvement.
+
+**Lighthouse Audit (Desktop):**
+
+| Audit | Score |
+|---|---|
+| Performance | 93 |
+| Accessibility | 100 |
+| Best Practices | 77 |
+| SEO | 100 |
+
+The desktop Lighthouse audit achieved strong overall results. The higher desktop Performance score reflects faster and more stable network conditions compared to the simulated mobile test environment.
+
+Some of the remaining warnings are caused by external resources rather than problems with the website code itself. The cache warnings come from GitHub Pages’ default cache settings, which cannot be changed by the developer. Render-blocking warnings are related to external CDN files such as Bootstrap, Font Awesome, and Google Fonts. The image warnings are mainly due to the placeholder project images currently being used during development. Replacing these with optimised real project screenshots has been noted in the README as a future improvement.
+
+Accessibility and SEO both scored 100, showing that the site follows good accessibility and search engine practices on both desktop and mobile. The Best Practices score remained at 77 for the same reasons found in the mobile audit, mainly due to GitHub Pages cache limitations.
+
 
 ## Known Bugs
 

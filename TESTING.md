@@ -2,7 +2,7 @@
 
 This document records testing performed throughout the development of the portfolio site. Entries are added at each development stage rather than retrospectively.
 
-> **Note on stage coverage:** Testing entries cover stages where testable artefacts existed (code, design output, or deployed product). Stages 1 (content planning) and 3 (repository setup) are not included as they produced decisions and infrastructure rather than testable outputs — Stage 1 is evidenced through the README's user stories and design decisions section, and Stage 3 is evidenced through the commit history. Stages 9 (README) and 10 (deployment) are not separate entries because the README's accuracy is verified by comparing it to the live site, and deployment testing is captured within the Stage 11 Final Verification entry.
+> **Note on stage coverage:** Testing entries cover stages where testable artefacts existed (code, design output, or deployed product). Stages 1 (content planning) and 3 (repository setup) are not included as they produced decisions and infrastructure rather than testable outputs - Stage 1 is evidenced through the README's user stories and design decisions section, and Stage 3 is evidenced through the commit history. Stages 9 (README) and 10 (deployment) are not separate entries because the README's accuracy is verified by comparing it to the live site, and deployment testing is captured within the Stage 11 Final Verification entry.
 
 ---
 
@@ -255,13 +255,21 @@ What was tested: The complete index.html and assets/css/style.css files validate
 
 **Issues found and fixed during this stage:**
 
-Stray `<script>` start tag flagged in HTML validator at line 295. Root cause was the Bootstrap JavaScript bundle being placed outside the <body> element, between </body> and </html>, which is invalid HTML. Fixed by moving the Bootstrap script inside the <body>, immediately before the closing tag, and placing it before the custom navbar collapse script so that Bootstrap's JavaScript loads first.
+Stray `<script>` start tag flagged in HTML validator at line 295. Root cause was the Bootstrap JavaScript bundle being placed outside the `<body>` element, between `</body>` and `</html>`, which is invalid HTML. Fixed by moving the Bootstrap script inside the `<body>`, immediately before the closing tag, and placing it before the custom navbar collapse script so that Bootstrap's JavaScript loads first.
 
 Notes:
 
 The 34 CSS warnings all relate to the same advisory message: "Due to their dynamic nature, CSS variables are currently not statically checked." This is a known limitation of the Jigsaw validator, which does not resolve CSS custom property values during validation. The warnings are tool limitations rather than code issues. The use of CSS variables throughout the stylesheet reflects modern CSS best practice for maintainability and palette consistency, and was a deliberate design decision.
-The HTML structural fix uncovered an oversight from earlier in development - the Bootstrap script had been outside <body> since adding Bootstrap to the project first. The validation pass caught what visual testing had not, demonstrating the value of running automated validators alongside manual testing.
-See testing-evidence/html-validation-before.png, testing-evidence/html-validation-after.png, and testing-evidence/css-validation-result.png for screenshots of the validator outputs.
+The HTML structural fix uncovered an oversight from earlier in development - the Bootstrap script had been outside `<body>` since adding Bootstrap to the project first. The validation pass caught what visual testing had not, demonstrating the value of running automated validators alongside manual testing.
+
+See below screenshots of the validator outputs:
+
+![HTML Validation before screenshot](testing-evidence/html-validation-before.png)
+
+![HTML Validation after screenshot](testing-evidence/html-validation-after.png)
+
+![CSS Validation screenshot](testing-evidence/css-validation-result.png)
+
 
 ---
 
@@ -288,6 +296,8 @@ Notes:
 
 The discovery reinforces that deployment testing is a distinct phase from local testing - the defect was reproducible locally in retrospect, but only surfaced naturally during live-site verification. 
 
+---
+
 ## Browser Tests
 
 - [✅] Chrome - desktop / tablet / mobile
@@ -295,6 +305,8 @@ The discovery reinforces that deployment testing is a distinct phase from local 
 - [✅] Edge - desktop
 
 There were no issues to report whilst testing the deployed site across three browsers. 
+
+---
 
 ## Lighthouse Audit
 
@@ -329,6 +341,8 @@ The desktop Lighthouse audit achieved strong overall results. The higher desktop
 Some of the remaining warnings are caused by external resources rather than problems with the website code itself. The cache warnings come from GitHub Pages’ default cache settings, which cannot be changed by the developer. Render-blocking warnings are related to external CDN files such as Bootstrap, Font Awesome, and Google Fonts. The image warnings are mainly due to the placeholder project images currently being used during development. Replacing these with optimised real project screenshots has been noted in the README as a future improvement.
 
 Accessibility and SEO both scored 100, showing that the site follows good accessibility and search engine practices on both desktop and mobile. The Best Practices score remained at 77 for the same reasons found in the mobile audit, mainly due to GitHub Pages cache limitations.
+
+---
 
 
 ## Known Bugs

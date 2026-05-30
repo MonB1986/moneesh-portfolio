@@ -19,13 +19,26 @@ The site was designed around five user stories, each representing a recruiter's 
 
 1. **As a recruiter, I want to understand who the candidate is and what role they are looking for within 10 seconds**, so I can decide quickly whether to investigate further. *Solved by the hero section with name, role tagline, photo, and a primary call-to-action above the fold.*
 
+![Hero section showing name, role, and CTA](user-story-evidence/us1-hero-recruiter-10-seconds.png)
+
 2. **As a recruiter, I want to see the candidate's technical skills at a glance**, so I can assess whether they match the requirements I am hiring for. *Solved by the Skills section with icon and label cards in a responsive grid.*
+
+![Skills section showing six different icons of skills](user-story-evidence/us2-skills-at-a-glance.png)
 
 3. **As a recruiter, I want to see examples of work the candidate has built**, so I can evaluate the quality and range of their work. *Solved by the Projects section with image, title, description, tech tags, and live and code links per card.*
 
+![Project section showing four different cards of projects candidate has made](user-story-evidence/us3-project-examples.png)
+
 4. **As a recruiter, I want to get a sense of the candidate as a person**, so I can judge whether they would fit the team. *Solved by the About section with bio paragraph and Quick Facts.*
 
+![About section showing paragraph about the canddiate and a quick-facts section about the candidate](user-story-evidence/us4-about-personal.png)
+
 5. **As a recruiter, I want to be able to contact the candidate easily and find them on LinkedIn or GitHub**, so I can progress to contact them freely without issues. *Solved by the Contact section with a hire-me form, direct email link, and three social links (GitHub, LinkedIn, email).*
+
+![Contact section showing contact form with a get in touch button, email address and three socila media icons below which can be clicked for LinkedIn, GitHub or Email](user-story-evidence/us5-contact-methods.png)
+
+
+
 
 ## Wireframes
 

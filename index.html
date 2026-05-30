@@ -19,6 +19,12 @@
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <!-- Font Awesome 6 (https://fontawesome.com) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+
     <!-- Custom styles -->
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
@@ -273,9 +279,9 @@
 
 
     <!-- Bootstrap 5 JavaScript Bundle -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-    crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
 
 
 
@@ -296,22 +302,22 @@
     </script>
 
 
-<!-- Custom scroll behaviour for hero CTA button to compensate for sticky nav offset.
+    <!-- Custom scroll behaviour for hero CTA button to compensate for sticky nav offset.
      Generated with AI assistance (per course director approval) due to a layout
      conflict between scroll-margin-top and the Bootstrap navbar collapse state. -->
 
-<script>
-document.querySelector('.cta-scroll').addEventListener('click', function(e) {
-    e.preventDefault();
+    <script>
+        document.querySelector('.cta-scroll').addEventListener('click', function (e) {
+            e.preventDefault();
 
-    const contact = document.querySelector('#contact');
+            const contact = document.querySelector('#contact');
 
-    window.scrollTo({
-        top: contact.offsetTop - 80,
-        behavior: 'smooth'
-    });
-});
-</script>
+            window.scrollTo({
+                top: contact.offsetTop - 80,
+                behavior: 'smooth'
+            });
+        });
+    </script>
 
 </body>
 

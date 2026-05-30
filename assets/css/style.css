@@ -3,9 +3,9 @@
   --font-body: "Inter", sans-serif;
   --font-heading: "Poppins", sans-serif;
   --bg: #fdfaf6; /* Page background (warm off-white) */
-  --text: #1f2937; /*Body text (deep slate)*/
+  --text: #1f2937; /* Body text (deep slate)*/
   --coral: #d97757; /* Primary colour (warm coral) */
-  --blue: #7ba7bc; /*Secondary colour (dusty blue)*/
+  --blue: #7ba7bc; /* Secondary colour (dusty blue)*/
   --coral-dark: #b55e40; /* Coral on hover/active */
   --blue-dark: #5a8a9e; /* Blue on hover/active */
   --blue-glow: #7ba7bc4d; /* Blue on focus/active */
@@ -85,7 +85,7 @@ h6 {
   color: white;
 }
 
-/*Hero Section */
+/* Hero Section */
 
 .hero-photo {
   max-width: 350px;
@@ -259,7 +259,7 @@ footer p {
   }
 }
 
-/*Header sticky Nav Shadow decoration */
+/* Header sticky Nav Shadow decoration */
 header.sticky-top {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }

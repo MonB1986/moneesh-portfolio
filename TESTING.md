@@ -2,6 +2,8 @@
 
 This document records testing performed throughout the development of the portfolio site. Entries are added at each development stage rather than retrospectively.
 
+> **Note on stage coverage:** Testing entries cover stages where testable artefacts existed (code, design output, or deployed product). Stages 1 (content planning) and 3 (repository setup) are not included as they produced decisions and infrastructure rather than testable outputs — Stage 1 is evidenced through the README's user stories and design decisions section, and Stage 3 is evidenced through the commit history. Stages 9 (README) and 10 (deployment) are not separate entries because the README's accuracy is verified by comparing it to the live site, and deployment testing is captured within the Stage 11 Final Verification entry.
+
 ---
 
 ## Test Log
@@ -263,7 +265,7 @@ See testing-evidence/html-validation-before.png, testing-evidence/html-validatio
 
 ---
 
-**Stage 11:** Final Verification
+### Stage 11: Final Verification
 
 **Date:** 19/05/2026
 
@@ -305,6 +307,8 @@ There were no issues to report whilst testing the deployed site across three bro
 | Best Practices | 77 |
 | SEO | 100 |
 
+![Lighthouse mobile screenshot](testing-evidence/lighthouse-mobile.png)
+
 Mobile Performance score is mainly affected by external files being loaded from CDNs, including Bootstrap, Font Awesome, and Google Fonts, as well as the size of placeholder project images. Despite this, the website itself performs efficiently. This means the page loads smoothly and the code is not causing performance issues. The lower score is mostly due to network requests needed to load external frameworks and assets.
 
 The Best Practices score is affected by GitHub Pages’ default cache settings, which cannot be changed by the developer. Placeholder images are currently being used during development, and replacing them with optimised real project screenshots has been identified in the README as a future improvement.
@@ -317,6 +321,8 @@ The Best Practices score is affected by GitHub Pages’ default cache settings, 
 | Accessibility | 100 |
 | Best Practices | 77 |
 | SEO | 100 |
+
+![Lighthouse desktop screenshot](testing-evidence/lighthouse-desktop.png)
 
 The desktop Lighthouse audit achieved strong overall results. The higher desktop Performance score reflects faster and more stable network conditions compared to the simulated mobile test environment.
 

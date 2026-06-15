@@ -296,17 +296,32 @@ Notes:
 
 The discovery reinforces that deployment testing is a distinct phase from local testing - the defect was reproducible locally in retrospect, but only surfaced naturally during live-site verification. 
 
-**Active navigation indicator — investigated, not implemented**
+**Further Changes**
+
+**Active navigation indicator - investigated, not implemented**
 
 Following the course director's feedback to add a more prominent indication of the current section in the navigation, three approaches were investigated:
 
-1. **CSS `scroll-target-group` / `:target-current`** — an experimental CSS feature found via a tutorial. Worked correctly in Chrome and Edge but failed silently in Firefox, as the feature is not yet Baseline and has limited browser support. Rejected due to the cross-browser testing failure.
+1. **CSS `scroll-target-group` / `:target-current`** - an experimental CSS feature found via a tutorial. Worked correctly in Chrome and Edge but failed silently in Firefox, as the feature is not yet Baseline and has limited browser support. Rejected due to the cross-browser testing failure.
 
-2. **Bootstrap ScrollSpy (`data-bs-spy`)** — Bootstrap's built-in component, implemented via data attributes. Worked for most sections, but the Skills section (being visually compact relative to its neighbours) was frequently skipped in favour of the adjacent Projects section highlighting instead. This is a known limitation of ScrollSpy's viewport-intersection algorithm with short sections.
+2. **Bootstrap ScrollSpy (`data-bs-spy`)** - Bootstrap's built-in component, implemented via data attributes. Worked for most sections, but the Skills section (being visually compact relative to its neighbours) was frequently skipped in favour of the adjacent Projects section highlighting instead. This is a known limitation of ScrollSpy's viewport-intersection algorithm with short sections.
 
-3. **Custom Intersection Observer JS** — the most flexible option, but given the amount of AI-assisted JavaScript already present in the project (navbar collapse and CTA scroll), and the additional time required to implement and thoroughly cross-browser test a new custom script before the submission deadline, this was not pursued.
+3. **Custom Intersection Observer JS** - the most flexible option, but given the amount of AI-assisted JavaScript already present in the project (navbar collapse and CTA scroll), and the additional time required to implement and thoroughly cross-browser test a new custom script before the submission deadline, this was not pursued.
 
 **Decision:** the active navigation indicator was not implemented for this submission. The sticky navigation, smooth-scrolling anchor links, and clear section headings already orient the user as they scroll. This is documented as a future improvement.
+
+
+**Skills section expanded with descriptions for each technology**
+
+Following the course director's feedback to add more depth to the Skills section, each skill now includes a short description explaining how the technology has been used in this and previous projects.
+
+Changes made:
+- Removed `text-center` from the `<ul>` element, as left-aligned text reads more naturally for paragraph-style content
+- Changed column classes from `col-6 col-md-4` to `col-12 col-md-6 col-lg-4`, giving each card enough width for the description text across one column on mobile, two on tablet, and three on desktop
+- Wrapped each skill's content in a `<div class="d-flex gap-3 align-items-start">` to position the icon beside the text rather than above it, aligned to the top of each card
+- Updated the `#skills i` CSS rule, removing `display: block` and `margin-bottom` (no longer needed in a flex layout) and adding `flex-shrink: 0` so icons retain their size next to longer descriptions.
+
+Tested across mobile (375px), tablet (768px), and desktop (1440px) - layout stacks correctly at each breakpoint, and the existing icon hover effect (colour change and scale on hover) continues to work as expected.
 
 ---
 

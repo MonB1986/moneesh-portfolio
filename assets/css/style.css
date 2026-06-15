@@ -130,8 +130,7 @@ h6 {
   transition:
     color 0.2s ease-in-out,
     transform 0.2s ease-in-out;
-  display: block;
-  margin-bottom: 0.75rem;
+  flex-shrink: 0;
 }
 
 #skills li:hover i {

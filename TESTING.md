@@ -323,6 +323,19 @@ Changes made:
 
 Tested across mobile (375px), tablet (768px), and desktop (1440px) - layout stacks correctly at each breakpoint, and the existing icon hover effect (colour change and scale on hover) continues to work as expected.
 
+**Contact form validation feedback added**
+
+Following the course director's feedback to provide clear feedback when fields are completed incorrectly, custom validation styling and messages were added to the contact form.
+
+Changes made:
+- Added `.invalid-feedback` divs after each required field (Your name, Email, Message), containing field-specific messages.
+- Added CSS using the `:user-invalid` and `:user-valid` pseudo-classes, which only apply styling after the user has interacted with a field - avoiding the common issue where `:invalid` styles every required field as an error on page load before the user has done anything.
+- Added `novalidate` to the `<form>` element to suppress the browser's native validation tooltip, relying instead on the custom styled messages. The `required` and `type="email"` attributes still drive the CSS validation states via `:user-invalid`/`:user-valid` - `novalidate` only disables the browser's own UI and submission blocking.
+
+Testing: clicking "Get in touch" with empty required fields shows coral borders and custom messages on Your name, Email, and Message (all marked `required` as a group, since the browser treats a submit attempt as interaction with every required field). Filling in a field correctly turns its border blue. Tested across Chrome, Firefox, and Edge.
+
+Two CSS approaches were considered: `:invalid`/`:valid` (rejected, as these trigger immediately on page load for empty required fields) and `:user-invalid`/`:user-valid` (used, as these only activate after user interaction).
+
 ---
 
 ## Browser Tests

@@ -70,13 +70,13 @@ Headshot, name, role ("Junior Frontend Developer"), a short personal tagline, an
 A bio paragraph alongside a Quick Facts list covering location, current study, interests, and availability. A subtle vertical divider visually pairs the two columns on desktop, while they stack cleanly on mobile and tablet.
 
 ### Skills section
-Six core skill icons in a responsive grid (HTML5, CSS3, Bootstrap, Git and GitHub, JavaScript, Responsive Design). Each icon scales subtly on hover to invite engagement.
+Six core skill icons in a responsive grid (HTML5, CSS3, Bootstrap, Git and GitHub, JavaScript, Responsive Design). Each icon scales subtly on hover to invite engagement. Descriptions about each skill positioned next to the relevant skill icon. 
 
 ### Projects section
-Four project cards, each with a thumbnail image, title, description, tech stack, and two action links ("View Live" and "View Code"). Cards lift gently on hover. At XL viewport widths, the row is capped to prevent the cards sprawling.
+Four project cards, images and examples of live projects that I have done as part of the course so far, each with a thumbnail image, title, description, tech stack, and two action links ("View Live" and "View Code"). Cards lift gently on hover. At XL viewport widths, the row is capped to prevent the cards sprawling.
 
 ### Contact section
-A hire-me form with name, company, email, role, and message fields (the first and last being required). Below the form, a direct email link and three social icons (GitHub, LinkedIn, email) for additional contact methods.
+A hire-me form with name, company, email, role, and message fields (the first and last being required). Below the form, a direct email link and three social icons (GitHub, LinkedIn, email) for additional contact methods. Contact form designed with validation feedback to the user.
 
 ### Footer
 Simple copyright line, palette-consistent with the rest of the site.

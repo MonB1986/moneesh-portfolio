@@ -228,3 +228,4 @@ Planned enhancements for future iterations:
 - **Live project links** - replacing the current `example.com` placeholders with actual deployed project URLs
 - **Working contact form** - currently uses a `mailto:` link, which opens the user's email client. A future version could integrate with a form service (Formspree, Netlify Forms, or similar) so submissions are received directly
 - **Animation on scroll** - subtle fade-in or slide effects as sections enter the viewport, adding polish without compromising accessibility
+- **Active navigation indicator** - highlighting the current section in the nav as the user scrolls. Three approaches were investigated (documented in TESTING.md) but not implemented due to cross-browser limitations and time constraints. A custom Intersection Observer implementation, with section markup adjusted to give each section a more consistent height, would be the recommended approach for a future iteration.

@@ -296,6 +296,18 @@ Notes:
 
 The discovery reinforces that deployment testing is a distinct phase from local testing - the defect was reproducible locally in retrospect, but only surfaced naturally during live-site verification. 
 
+**Active navigation indicator — investigated, not implemented**
+
+Following the course director's feedback to add a more prominent indication of the current section in the navigation, three approaches were investigated:
+
+1. **CSS `scroll-target-group` / `:target-current`** — an experimental CSS feature found via a tutorial. Worked correctly in Chrome and Edge but failed silently in Firefox, as the feature is not yet Baseline and has limited browser support. Rejected due to the cross-browser testing failure.
+
+2. **Bootstrap ScrollSpy (`data-bs-spy`)** — Bootstrap's built-in component, implemented via data attributes. Worked for most sections, but the Skills section (being visually compact relative to its neighbours) was frequently skipped in favour of the adjacent Projects section highlighting instead. This is a known limitation of ScrollSpy's viewport-intersection algorithm with short sections.
+
+3. **Custom Intersection Observer JS** — the most flexible option, but given the amount of AI-assisted JavaScript already present in the project (navbar collapse and CTA scroll), and the additional time required to implement and thoroughly cross-browser test a new custom script before the submission deadline, this was not pursued.
+
+**Decision:** the active navigation indicator was not implemented for this submission. The sticky navigation, smooth-scrolling anchor links, and clear section headings already orient the user as they scroll. This is documented as a future improvement.
+
 ---
 
 ## Browser Tests
